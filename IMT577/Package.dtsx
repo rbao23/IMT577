@@ -1,0 +1,641 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/2/2021 2:19:02 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ML-RefVm-765087"
+  DTS:CreatorName="ML-RefVm-765087\imt577user"
+  DTS:DTSID="{EA9AAB79-4A14-4E10-8B82-895C9EEA46D3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.157"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{9521AE56-7544-4619-A779-6C7BD96C3397}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ML-RefVm-765087.DestinationSystem.sa 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A4C4C5CD-F081-4929-BD8D-183F5A8493A2}"
+      DTS:ObjectName="ML-RefVm-765087.DestinationSystem.sa 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=ML-RefVm-765087;User ID=sa;Initial Catalog=DestinationSystem;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACinak78P1xTe3o9bKGJEusxVCA9MYgCJd+f1yKxAr9CQAAAAAOgAAAAAIAACAAAADW4GS8UUHagGP+IeCZ/1lJjGwA6FiD6uSEE8lZ0FVsQTAAAACqWGrwGQrI6QAioUwQnqxI09EXNdva86McnNO/ZpOkP6irD0JF4UVXg4Nyvch3JghAAAAAzPt+CUXpLrH+sSBJKwhzp7LWIgtKqa6CnElEMozH2x+lxzkdlm+V8JT9pPh2goRE5EI/oUpg+sECv2znYU++7w</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ML-RefVm-765087.SourceSystem.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EE975F51-4432-49E4-9C94-691287FBC43F}"
+      DTS:ObjectName="ML-RefVm-765087.SourceSystem.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=ML-RefVm-765087;User ID=sa;Initial Catalog=SourceSystem;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwYc9cag84EmDEg74nYz3VgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB8SlNaoqRxdufxpaMavgKhpOXFyT9oyVZAx7p30sMuwAAAAAAOgAAAAAIAACAAAAA4VME72aFH6WjXHncCTXofeUS9VD8eFn1PM7vMI2Q3VDAAAAC0YhLTJ8oLBrKMBtyNfwPe0Dgoz/ZV9bFO5MDraLaly251xFLs75DaK/e6gSmzqT1AAAAAHN4VdEsq1b2av63fltLGP1AfGCZXNTHug63Tad+A5LaBduDm+bxswvYJcD9NENxaptNuh3Fywag3g4M7henn5g</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Stage Channel"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7716F809-B745-4E0E-9808-0D172E8DA016}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Stage Channel"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Stage Channel\Destination Channel"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination Channel"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[StageChannel]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage Channel\Destination Channel.Connections[OleDbConnection]"
+                  connectionManagerID="{D1DFF5E3-E399-4FC4-917B-6910F09A6446}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[ML-RefVm-765087.DestinationSystem.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].Columns[ChannelID]"
+                      cachedDataType="i4"
+                      cachedName="ChannelID"
+                      externalMetadataColumnId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].ExternalColumns[ChannelID]"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[ChannelID]" />
+                    <inputColumn
+                      refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].Columns[ChannelCategoryID]"
+                      cachedDataType="i4"
+                      cachedName="ChannelCategoryID"
+                      externalMetadataColumnId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].ExternalColumns[ChannelCategoryID]"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[ChannelCategoryID]" />
+                    <inputColumn
+                      refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].Columns[Channel]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Channel"
+                      externalMetadataColumnId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].ExternalColumns[Channel]"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[Channel]" />
+                    <inputColumn
+                      refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].Columns[CreatedBy]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CreatedBy"
+                      externalMetadataColumnId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].ExternalColumns[CreatedBy]"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[CreatedBy]" />
+                    <inputColumn
+                      refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].Columns[ModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ModifiedDate"
+                      externalMetadataColumnId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[ModifiedDate]" />
+                    <inputColumn
+                      refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].Columns[ModifiedBy]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ModifiedBy"
+                      externalMetadataColumnId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedBy]"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[ModifiedBy]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].ExternalColumns[ChannelID]"
+                      dataType="i4"
+                      name="ChannelID" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].ExternalColumns[ChannelCategoryID]"
+                      dataType="i4"
+                      name="ChannelCategoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].ExternalColumns[Channel]"
+                      dataType="wstr"
+                      length="50"
+                      name="Channel" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].ExternalColumns[CreatedBy]"
+                      dataType="wstr"
+                      length="255"
+                      name="CreatedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedBy]"
+                      dataType="wstr"
+                      length="255"
+                      name="ModifiedBy" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Stage Channel\Destination Channel.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Channel\Destination Channel.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage Channel\Destination Channel.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Destination Channel.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage Channel\Destination Channel.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Stage Channel\Source Channel"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source Channel"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Channel]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Stage Channel\Source Channel.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ML-RefVm-765087.SourceSystem.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[ML-RefVm-765087.SourceSystem.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[ChannelID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].ExternalColumns[ChannelID]"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[ChannelID]"
+                      name="ChannelID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[ChannelCategoryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].ExternalColumns[ChannelCategoryID]"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[ChannelCategoryID]"
+                      name="ChannelCategoryID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[Channel]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].ExternalColumns[Channel]"
+                      length="50"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[Channel]"
+                      name="Channel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[CreatedBy]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].ExternalColumns[CreatedBy]"
+                      length="255"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[CreatedBy]"
+                      name="CreatedBy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[ModifiedBy]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].ExternalColumns[ModifiedBy]"
+                      length="255"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].Columns[ModifiedBy]"
+                      name="ModifiedBy"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].ExternalColumns[ChannelID]"
+                      dataType="i4"
+                      name="ChannelID" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].ExternalColumns[ChannelCategoryID]"
+                      dataType="i4"
+                      name="ChannelCategoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].ExternalColumns[Channel]"
+                      dataType="wstr"
+                      length="50"
+                      name="Channel" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].ExternalColumns[CreatedBy]"
+                      dataType="wstr"
+                      length="255"
+                      name="CreatedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output].ExternalColumns[ModifiedBy]"
+                      dataType="wstr"
+                      length="255"
+                      name="ModifiedBy" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[ChannelID]"
+                      dataType="i4"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[ChannelID]"
+                      name="ChannelID" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[ChannelCategoryID]"
+                      dataType="i4"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[ChannelCategoryID]"
+                      name="ChannelCategoryID" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[Channel]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[Channel]"
+                      name="Channel" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[CreatedDate]"
+                      name="CreatedDate" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[CreatedBy]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[CreatedBy]"
+                      name="CreatedBy" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      name="ModifiedDate" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[ModifiedBy]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[ModifiedBy]"
+                      name="ModifiedBy" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Stage Channel.Paths[OLE DB Source Output]"
+              endId="Package\Stage Channel\Destination Channel.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Stage Channel\Source Channel.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Channel"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E8621264-CE93-4886-B1A6-A223CE8C9908}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Channel"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D1DFF5E3-E399-4FC4-917B-6910F09A6446}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.StageChannel" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{AF00AE45-C9AC-46CF-8268-8C85FF93D6F9}"
+      DTS:From="Package\Truncate Channel"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Stage Channel" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Truncate Channel"
+          TopLeft="117,73" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Stage Channel"
+          TopLeft="250,182" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="200,115">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126,67"
+              Start="0,0"
+              End="126,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
+                  <mssgle:LineSegment
+                    End="122,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="122,33.5"
+                    Point2="126,33.5"
+                    Point3="126,37.5" />
+                  <mssgle:LineSegment
+                    End="126,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Stage Channel">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Stage Channel\Source Channel"
+          TopLeft="165,108" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Stage Channel\Destination Channel"
+          TopLeft="266,224" />
+        <EdgeLayout
+          Id="Package\Stage Channel.Paths[OLE DB Source Output]"
+          TopLeft="244,150">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="111,74"
+              Start="0,0"
+              End="111,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33"
+                    Point2="0,37"
+                    Point3="4,37" />
+                  <mssgle:LineSegment
+                    End="107,37" />
+                  <mssgle:CubicBezierSegment
+                    Point1="107,37"
+                    Point2="111,37"
+                    Point3="111,41" />
+                  <mssgle:LineSegment
+                    End="111,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage Channel\Source Channel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Stage Channel\Destination Channel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
