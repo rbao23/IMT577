@@ -27,12 +27,12 @@ ProductID,Product,Year, SalesQuantityTarget
 2,Lipstick,2014,2400500
 16,Pajamas,2013,1850000
 16,Pajamas,2014,1910000
-18,"Shoes, High-heel",2013,3138000
-18,"Shoes, High-heel",2014,3318400
-4,"Silver Ring, Gallic pattern",2013,1244300
-4,"Silver Ring, Gallic pattern",2014,1294000
-5,"Silver Ring, plain",2013,1506000
-5,"Silver Ring, plain",2014,1236500
+18,Shoes High-heel,2013,3138000
+18,Shoes High-heel,2014,3318400
+4,Silver Ring Gallic pattern,2013,1244300
+4,Silver Ring Gallic pattern,2014,1294000
+5,Silver Ring plain,2013,1506000
+5,Silver Ring plain,2014,1236500
 14,Skirt,2013,2400000
 14,Skirt,2014,2300000
 12,Spider-man T-shirt,2013,2000000
@@ -45,5 +45,5 @@ ProductID,Product,Year, SalesQuantityTarget
 10,Thomas the Train Pajamas,2014,1076000
 22,T-Shirt,2013,1552000
 22,T-Shirt,2014,1365900
-8,"White Socks, 6 pack",2013,576000
-8,"White Socks, 6 pack",2014,555000
+8,White Socks 6 pack,2013,576000
+8,White Socks 6 pack,2014,555000
